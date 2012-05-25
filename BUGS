@@ -1,0 +1,7 @@
+Development bugs:
+
+* Program should give warnings for the following:
+  o Number of input budget filenames doesn't match report filenames
+  o Number of input scales doesn't match number of input budget
+    filenames.
+

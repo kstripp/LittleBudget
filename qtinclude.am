@@ -1,0 +1,19 @@
+### qtinclude.am
+### lb project
+###
+### g. m. beddingfield
+### 2005-07-19
+###
+### Project-wide Makefile rules et al.
+###
+
+moc_%.cpp: %.h
+	$(QT_MOC) -o $@ $<
+
+%.h: %.ui
+	$(QT_UIC) $< -o $@
+
+%.cpp: %.ui %.h
+	$(QT_UIC) -impl $*.h $< -o $@
+
+

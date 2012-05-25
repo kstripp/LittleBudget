@@ -1,0 +1,168 @@
+.TH lbrc 1 "August 2005"  "Version 1.0.0" "1.0.0"
+.SH NAME
+lbrc \- Configuration file for execution of lb
+
+.SH DESCRIPTION
+
+The
+.B lbrc
+file controls the way that the
+.B lb
+program generates reports.  The lbrc file defines the sections and
+arithmatic for the various accounts that it will be reporting on.
+There is a default configuration file that is compiled into the
+.B lb
+program, in case you do not define an lbrc file yourself.
+
+.SH SEARCH PATH
+
+The
+.B lb
+and
+.B lbgui
+programs will search for the following files (in order) before falling
+back on the default configuration:
+
+.IP 1:
+ ./.lbrc
+.IP 2:
+ ~/.lbrc
+
+.P
+If no configuration file is found, a default one is supplied.  See the
+.B EXAMPLE
+section.
+
+.SH CONFIGURATION
+
+The lbrc file is like a blueprint for your report.  The report will be
+ouput in roughly the same order that you had in your configuration
+file.  Blank lines and lines that begin with '#' are ignored.  There
+are only two types of configuration command:  
+.B section
+and
+.B report.
+
+.SS section
+
+A section is a reporting of each individual account.  It finds
+accounts that match your criteria, and then groups them together.  The
+line looks like this:
+.P
+section <"n"> <"Label"> <"Match"> [-]1
+
+Each field is described thus:
+
+.TP 12
+.BI section
+Denotes that we're defining a section
+.TP 12
+.BI ``n''
+A
+.I variable
+name to be used later in a
+.B report
+field.  Use a single letter.  Case sensitive.
+.TP 12
+.BI ``Label''
+A string that will announce the summary of these files (at the bottom
+line).  E.g. if these are 'expense accounts' you would probably want
+to use something like ``Total Expenses:''.
+.TP 12
+.BI ``Match''
+Matches this string with the name of each account in the budgets and
+reports.  If the first part of the actual account matches this string,
+then the account will be reported in this section.  Note that accounts
+should not appear in more than one section.
+.B IMPORTANT!
+You should always have the last 'section' be "", which makes it a
+default handler.  Reports
+.I will not
+be reported twice.  This will print out all accounts that have not
+been reported in previous sections.
+.TP 12
+.BI [-]1
+This should either be '1' or '-1'.  If the account is an
+income type of account, the value should be '1'.  If the account is an
+expense type of account, the value should be '-1'.  This way, when the
+report comes on an account, the values are generally spit out as
+non-negative numbers (which is easier to understand).
+
+.SS report
+
+A report gives a sort of bottom line statement (like ``YE OLDE BOTTOM
+LINE:'') and performs a little arithmatic.  The format of a 'report'
+line is like this:
+.P
+report <"Label"> <"sums">
+
+.TP 12
+.BI report
+Denotes that we're defining a report.
+.TP 12
+.BI ``Label''
+An arbitrary introduction to the line.
+.TP 12
+.BI ``sums''
+A very simple equation.  It only handles + and -, no parenthesis.
+E.g. if you have defined sections a, b, and c previously, then you may
+enter the equation as ``a-b-c'' or ``a+b-c'', etc.  You may not get
+any more complicated than that.  E.g. ``a-(c-b)'' will give
+unpredictible results.
+
+.SH EXAMPLES
+
+.SS The default settings
+
+When no lbrc file is found, this is the file that is used:
+
+.PD 0
+.P
+section "a" "Total Income:" "Income:" 1
+.P
+section "b" "Total Expenses:" "" -1
+.P
+report "Bottom line:" "a-b"
+
+All accounts that begin with ``Income:'' (E.g. ``Income:Salary'' and
+``Income:Other'') will be reported in this section.  Their values will
+be summed at the bottom of the section with a label that says ``Total
+Income:''.  Since it's income, we use the 1 to denote a positive
+cash-flow.  The second section uses the default ``Match'' parameter,
+so it will report 
+.I every
+account that was not reported as Income.  Presuming that they are all
+expenses (a negative cash flow), we indicate with a -1 at the end of
+the line.
+
+The ``Bottom line'' report merely shows how much you have left over
+(or how far you have fallen behind) when the expenses (``b'') are
+subtracted from the income (``a'').
+
+.SS My settings
+
+Here's the lbrc file that I use:
+
+.PD 0
+.P
+section "a" "Income Accounts:" "Income:" 1
+.P
+section "b" "Savings Accounts:" "Assets:Current Assets:Savings Account" -1
+.P
+section "c" "Debts:" "Liabilities:" -1
+.P
+section "d" "Expenses:" "" -1
+.P
+report "Bottom line (without debts):" "a-b-c-d"
+
+This is about the same as above, but I have certain types of accounts
+(savings and debts) laid out in their own sections.
+
+.SH "SEE ALSO"
+
+.BR lb (1),
+.BR lbgui (1)
+
+.SH AUTHOR
+
+G. M. Beddingfield <gabriel@teuton.org>

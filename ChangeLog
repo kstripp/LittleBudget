@@ -1,0 +1,6 @@
+ChangeLog for lb
+	
+2005-10-28 Gabriel M. Beddingfield <gabriel@teuton.org>
+	* Release:  4.0.1
+	* Fixed build errors on gcc4 / FC4
+	* Updated autoconf tools.

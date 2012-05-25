@@ -1,0 +1,63 @@
+lb -- The Little Budgeting Tool for GnuCash
+Copyright (C) 2004 by Gabriel M. Beddingfield
+All Rights Reserved
+
+CONTENTS
+========
+1. Description
+2. Introduction
+3. Installation
+4. Usage
+5. About lb
+
+DESCRIPTION
+===========
+
+lb, The Little Budgeting Tool for GnuCash is a command-line utility
+that compares a comma-separated values budget definition with a HTML
+cash-flow report from GnuCash.  It merges the two documents into a
+report that shows (for each account) the budgeted amount, the actual
+amount spent, and the difference between the two.
+
+INTRODUCTION
+============
+
+GnuCash (www.gnucash.org) is an excellent, high quality financial
+application put out by Gnu as part of the Gnome desktop project.
+While it is well-written and has many excellent features, on feature
+that it does not have is budgeting tools.  While such an interface is
+in the works among the developers, I needed something to get me by for
+now.  The Little Budgeting Tool meets this need for me.
+
+Budgeting is really pretty simple:
+
+1. You make a plan about how you will spend your money.
+2. You compare your actual expenses with your plan to make sure that
+you're sticking to your plan.
+3. You make adjustments to fit your expenses into your budget, and you
+adjust future budgets to be more realistic.
+
+The Little Budgeting Tool for GnuCash is a command-line application
+that compares a GnuCash cash-flow report (where you spent your money)
+with another text file where you keep your budget.  It outputs a table
+to the standard output (your screen) that shows you budgeted values,
+actual values, and the difference.
+
+INSTALLATION
+============
+
+See the INSTALL file.  In most cases you will just need to do:
+
+$ tar xjf lb-1.0.0.tar.bz2
+$ cd lb-1.0.0
+$ make
+$ su
+Password:
+# make install
+
+USAGE
+=====
+
+Read the man page:
+
+$ man 1 lb

@@ -1,0 +1,27 @@
+#! /bin/sh
+
+THECMD="../src/core/lb -b budget.csv budget.csv -r report.html report.html -s 1.04816l 0.992"
+
+cat <<EOF
+
+This is a simple example on how to use LB.  In this directory you will
+find the following files:
+
+runme-sh -- This file.  An executable script that runs the example.
+
+report.html -- A sample GnuCash cashflow report for a specific period.
+
+budget.csv -- A CSV list of all the accounts and their budgeted limits.
+              This particular budget is based on a \$1,000 income.
+
+Suppose the income for this period is \$1,048.16, and you want to scale
+the budget to meet the actual income.  To create the lb actual
+vs. budget report, you would enter the command:
+
+$THECMD
+
+Press <Enter> to run this report.
+EOF
+
+read
+$THECMD

@@ -1,0 +1,12 @@
+# budget.csv
+#
+# Monthly budget
+Income:Salary,1000.00
+Expenses:Tithe,100.00
+Assets:Current Assets:Savings Account,100.00
+Expenses:Rent,250.00
+Expenses:Grocery,250.00
+Expenses:Auto:Gas,80.00
+Expenses:Utilities:Electric,80.00
+Expenses:Misc,140.00
+
