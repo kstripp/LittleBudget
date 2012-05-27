@@ -44,6 +44,7 @@
 #include <ostream>
 #include <sstream>
 #include <string>
+#include <cstdlib>
 
 using std::string;
 using std::ostringstream;

@@ -59,6 +59,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 

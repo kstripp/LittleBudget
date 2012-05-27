@@ -34,6 +34,7 @@
 #include <list>
 #include <ostream>
 #include "bud.h"
+#include "lb.h"
 
 using std::vector;
 using std::ostream;

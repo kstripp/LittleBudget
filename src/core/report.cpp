@@ -36,6 +36,7 @@
 #include <cstring>  // for atof
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
 
 using namespace std;
 

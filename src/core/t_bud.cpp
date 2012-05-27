@@ -32,6 +32,7 @@
 #include <iostream>
 #include <limits> // for epsilon
 #include "bud.h"
+#include <cstdlib>
 #include "../test/tester.h"
 
 using namespace std;

@@ -39,7 +39,9 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <cstdlib>
 #include "bud.h"
+#include <cstring>
 
 using namespace std;
 
