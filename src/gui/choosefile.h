@@ -32,16 +32,23 @@
  *
  */
 
+#define QT3_SUPPORT
+
 #include <qdialog.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
+#include <Q3GridLayout>
+#include <Q3HBoxLayout>
+#include <QLabel>
 
 class QWidget;
-class QVBoxLayout;
-class QHBoxLayout;
-class QGridLayout;
+class Q3VBoxLayout;
+class Q3HBoxLayout;
+class Q3GridLayout;
 class QSpacerItem;
 class QLabel;
-class QListBox;
-class QListBoxItem;
+class Q3ListBox;
+class Q3ListBoxItem;
 class QPushButton;
 class QCheckBox;
 class fileListBox;
@@ -56,14 +63,14 @@ public:
 		    QWidget* parent = 0,
 		    const char* name = 0,
 		    bool modal = true,
-		    WFlags fl = 0 );
+		    Qt::WFlags fl = 0 );
 	~chooseFile();
 
 	static QStringList get_lb_cmds( const QStringList& result,
 					QWidget* parent = 0,
 					const char* name = 0,
 					bool modal = true,
-					WFlags fl = 0 );
+					Qt::WFlags fl = 0 );
 
 public slots:
 
@@ -84,8 +91,8 @@ private:
 	QPushButton* _okBtn;
 	QPushButton* _cxBtn;
 	QSpacerItem* _spacer;
-	QVBoxLayout* _vLay;
-	QHBoxLayout* _hLay;
+	Q3VBoxLayout* _vLay;
+	Q3HBoxLayout* _hLay;
 	QLabel* _budgetLabel;
 	QLabel* _reportLabel;
 };

@@ -33,27 +33,33 @@
  *
  */
 
+#define QT3_SUPPORT
+
 #include <qwidget.h>
-#include <qlistview.h>
+#include <q3listview.h>
 #include <qdir.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <Q3VBoxLayout>
+#include <QLabel>
 
 //class QWidget;
 class QPushButton;
 class QLabel;
-class QVBoxLayout;
-class QHBoxLayout;
+class Q3VBoxLayout;
+class Q3HBoxLayout;
 class QString;
 
-class fileListItem : public QListViewItem
+class fileListItem : public Q3ListViewItem
 {
 private:
 	QString _fn; // filename, with full path
 
 public:
-	fileListItem( QListView* parent,
+	fileListItem( Q3ListView* parent,
 		      const QString& fn,
 		      double scale );
-	fileListItem( QListView* parent,
+	fileListItem( Q3ListView* parent,
 		      const QString& fn,
 		      const QString& scale );
 	virtual ~fileListItem();
@@ -104,7 +110,7 @@ private slots:
 	void deleteFile( void );
 	void moveUp( void );
 	void moveDown( void );
-	void changeScale( QListViewItem*, const QPoint&, int );
+	void changeScale( Q3ListViewItem*, const QPoint&, int );
 
 public slots:
 	void languageChange( void );
@@ -116,15 +122,15 @@ private:
 	bool    _scales;
 
 	// widgets:
-	QListView* _box;
+	Q3ListView* _box;
 	QPushButton* _addBtn;
 	QPushButton* _deleteBtn;
 	QPushButton* _upBtn;
 	QPushButton* _downBtn;
 
 	// layouts:
-	QVBoxLayout* _buttonLay;
-	QHBoxLayout* _layout;
+	Q3VBoxLayout* _buttonLay;
+	Q3HBoxLayout* _layout;
 
 };
 

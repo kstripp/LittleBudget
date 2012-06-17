@@ -34,6 +34,8 @@
  *
  */
 
+#define QT3_SUPPORT
+
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
@@ -42,26 +44,30 @@
 #include <qaction.h>
 #include <qaction.h>
 #include <qfile.h>
-#include <qfiledialog.h>
+#include <q3filedialog.h>
 #include <qfont.h>
 #include <qimage.h>
 #include <qlayout.h>
 #include <qmenubar.h>
 #include <qmessagebox.h>
 #include <qpixmap.h>
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
 #include <qstring.h>
-#include <qtextbrowser.h>
-#include <qtoolbar.h>
+#include <q3textbrowser.h>
+#include <q3toolbar.h>
 #include <qtooltip.h>
 #include <qvariant.h>
-#include <qwhatsthis.h>
+#include <q3whatsthis.h>
+//Added by qt3to4:
+#include <Q3TextStream>
+#include <Q3VBoxLayout>
 
 #include "../core/lb.h"
 #include "mainwindow.h"
 #include "choosefile.h"
 
 using namespace std;
+//using namespace Qt;
 
 static const unsigned char image0_data[] = { 
     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
@@ -168,8 +174,8 @@ mainWindow::mainWindow( int argc,
 			char* argv[],
 			QWidget* parent,
 			const char* name,
-			WFlags fl )
-    : QMainWindow( parent, name, fl )
+			Qt::WFlags fl )
+    : Q3MainWindow( parent, name, fl )
 {
 	(void)statusBar();
 	QImage img;
@@ -184,22 +190,22 @@ mainWindow::mainWindow( int argc,
 	if ( !name )
 		setName( "lbMainWindowBase" );
 	setCentralWidget( new QWidget( this, "qt_central_widget" ) );
-	lbMainWindowBaseLayout = new QVBoxLayout( centralWidget(), 11, 6, "lbMainWindowBaseLayout"); 
+	lbMainWindowBaseLayout = new Q3VBoxLayout( centralWidget(), 11, 6, "lbMainWindowBaseLayout"); 
 
-	textBrowser = new QTextBrowser( centralWidget(), "textBrowser" );
+	textBrowser = new Q3TextBrowser( centralWidget(), "textBrowser" );
 	lbMainWindowBaseLayout->addWidget( textBrowser );
 
 	// actions
 	fileNewAction = new QAction( this, "fileNewAction" );
-	fileNewAction->setIconSet( QIconSet( image0 ) );
+	fileNewAction->setIconSet( QIcon( image0 ) );
 	fileOpenAction = new QAction( this, "fileOpenAction" );
-	fileOpenAction->setIconSet( QIconSet( image1 ) );
+	fileOpenAction->setIconSet( QIcon( image1 ) );
 	fileSaveAction = new QAction( this, "fileSaveAction" );
-	fileSaveAction->setIconSet( QIconSet( image2 ) );
+	fileSaveAction->setIconSet( QIcon( image2 ) );
 	fileSaveAsAction = new QAction( this, "fileSaveAsAction" );
 	fileExitAction = new QAction( this, "fileExitAction" );
 	editCopyAction = new QAction( this, "editCopyAction" );
-	editCopyAction->setIconSet( QIconSet( image3 ) );
+	editCopyAction->setIconSet( QIcon( image3 ) );
 	helpContentsAction = new QAction( this, "helpContentsAction" );
 	helpAboutAction = new QAction( this, "helpAboutAction" );
 	editReportAction = new QAction( this, "editReportAction" );
@@ -207,7 +213,7 @@ mainWindow::mainWindow( int argc,
 
 
 	// toolbars
-	toolBar = new QToolBar( QString(""), this, DockTop ); 
+	toolBar = new Q3ToolBar( QString(""), this, Qt::DockTop ); 
 
 	fileNewAction->addTo( toolBar );
 	fileOpenAction->addTo( toolBar );
@@ -221,7 +227,7 @@ mainWindow::mainWindow( int argc,
 	MenuBar = new QMenuBar( this, "MenuBar" );
 
 
-	fileMenu = new QPopupMenu( this );
+	fileMenu = new Q3PopupMenu( this );
 	fileNewAction->addTo( fileMenu );
 	fileOpenAction->addTo( fileMenu );
 	fileSaveAction->addTo( fileMenu );
@@ -229,7 +235,7 @@ mainWindow::mainWindow( int argc,
 	fileExitAction->addTo( fileMenu );
 	MenuBar->insertItem( QString(""), fileMenu, 1 );
 
-	editMenu = new QPopupMenu( this );
+	editMenu = new Q3PopupMenu( this );
 	editSelectAllAction->addTo( editMenu );
 	editReportAction->addTo( editMenu );
 	editMenu->insertSeparator();
@@ -237,7 +243,7 @@ mainWindow::mainWindow( int argc,
 	editMenu->insertSeparator();
 	MenuBar->insertItem( QString(""), editMenu, 2 );
 
-	helpMenu = new QPopupMenu( this );
+	helpMenu = new Q3PopupMenu( this );
 	helpContentsAction->addTo( helpMenu );
 	helpMenu->insertSeparator();
 	helpAboutAction->addTo( helpMenu );
@@ -245,7 +251,7 @@ mainWindow::mainWindow( int argc,
 
 	languageChange();
 	resize( QSize(737, 447).expandedTo(minimumSizeHint()) );
-	clearWState( WState_Polished );
+	//clearWState( WState_Polished );  /* Per http://qt-project.org/wiki/PortingQt3ToQt4, can be removed from qt4 code */
 
 	// signals and slots connections
 	connect( fileNewAction, SIGNAL( activated() ), this, SLOT( fileNew() ) );
@@ -263,7 +269,7 @@ mainWindow::mainWindow( int argc,
 	QFont font("Courier");
 	font.setStyleHint(QFont::TypeWriter);
 	textBrowser->setFont(font);
-	textBrowser->setWordWrap(QTextEdit::NoWrap);
+	textBrowser->setWordWrap(Q3TextEdit::NoWrap);
 	set_args(argc,(const char**)argv);
 	_lb = new lb(argc,(const char**)argv);
 	ostringstream os;
@@ -387,7 +393,7 @@ void mainWindow::fileSave()
  */
 void mainWindow::fileSaveAs()
 {
-	QString fn = QFileDialog::getSaveFileName( QString::null,
+	QString fn = Q3FileDialog::getSaveFileName( QString::null,
 						   QString::null,
 						   this,
 						   0,
@@ -407,8 +413,8 @@ int mainWindow::save_buffer( const QString& fn )
 	int rv = 0;
 	assert( !fn.isEmpty() );
 	QFile fp(fn);
-	if( fp.open( IO_WriteOnly ) ) {
-		QTextStream str( &fp );
+	if( fp.open( QIODevice::WriteOnly ) ) {
+		Q3TextStream str( &fp );
 		str << textBrowser->text() << "\n";
 		fp.close();
 		rv = 1;
@@ -430,7 +436,7 @@ int mainWindow::save_buffer( const QString& fn )
  */
 void mainWindow::fileExit()
 {
-	QMainWindow::close();
+	Q3MainWindow::close();
 	return;
 }
 

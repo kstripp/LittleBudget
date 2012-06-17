@@ -33,22 +33,30 @@
  *
  */
 
+#define QT3_SUPPORT
+
 #include <qvariant.h>
 #include <qpixmap.h>
-#include <qmainwindow.h>
+#include <q3mainwindow.h>
+//Added by qt3to4:
+#include <Q3ActionGroup>
+#include <Q3GridLayout>
+#include <Q3HBoxLayout>
+#include <Q3VBoxLayout>
+#include <Q3PopupMenu>
 
-class QVBoxLayout;
-class QHBoxLayout;
-class QGridLayout;
+class Q3VBoxLayout;
+class Q3HBoxLayout;
+class Q3GridLayout;
 class QSpacerItem;
 class QAction;
-class QActionGroup;
-class QToolBar;
-class QPopupMenu;
-class QTextBrowser;
+class Q3ActionGroup;
+class Q3ToolBar;
+class Q3PopupMenu;
+class Q3TextBrowser;
 class lb;
 
-class mainWindow : public QMainWindow
+class mainWindow : public Q3MainWindow
 {
 	Q_OBJECT;
 
@@ -57,7 +65,7 @@ public:
 		    char* argv[] = 0,
 		    QWidget* parent = 0,
 		    const char* name = 0,
-		    WFlags fl = 0 );
+		    Qt::WFlags fl = 0 );
 	~mainWindow();
 
 protected:
@@ -90,12 +98,12 @@ private:
 	QString _fn;
 
 	// Widgets
-	QTextBrowser* textBrowser;
+	Q3TextBrowser* textBrowser;
 	QMenuBar *MenuBar;
-	QPopupMenu *fileMenu;
-	QPopupMenu *editMenu;
-	QPopupMenu *helpMenu;
-	QToolBar *toolBar;
+	Q3PopupMenu *fileMenu;
+	Q3PopupMenu *editMenu;
+	Q3PopupMenu *helpMenu;
+	Q3ToolBar *toolBar;
 	QAction* fileNewAction;
 	QAction* fileOpenAction;
 	QAction* fileSaveAction;
@@ -107,7 +115,7 @@ private:
 	QAction* editReportAction;
 	QAction* editSelectAllAction;
 
-	QVBoxLayout* lbMainWindowBaseLayout;
+	Q3VBoxLayout* lbMainWindowBaseLayout;
 
 	QPixmap image0;
 	QPixmap image1;

@@ -29,20 +29,25 @@
  * implements the custom Qt widget fileListBox
  */
 
+#define QT3_SUPPORT
+
 #include <cassert>
 #include <iostream>
 
 #include <qdir.h>
-#include <qfiledialog.h>
+#include <q3filedialog.h>
 #include <qlabel.h>
 #include <qlayout.h>
-#include <qlistbox.h>
-#include <qlistview.h>
+#include <q3listbox.h>
+#include <q3listview.h>
 #include <qpushbutton.h>
 #include <qstring.h>
 #include <qwidget.h>
 #include <qlineedit.h>
 #include <qvalidator.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <Q3VBoxLayout>
 
 #include "filelistbox.h"
 
@@ -80,10 +85,10 @@ fileListBox::fileListBox( QWidget* parent,
 	// Lay out the widget:
 
 	// Create base layout
-	_layout = new QHBoxLayout(this,0,5,"_layout");
+	_layout = new Q3HBoxLayout(this,0,5,"_layout");
 
 	// Create listbox setup
-	_box = new QListView(this);
+	_box = new Q3ListView(this);
 	if (name) {
 		_box->addColumn( name );
 	} else {
@@ -92,16 +97,16 @@ fileListBox::fileListBox( QWidget* parent,
 	_box->addColumn("Scales");
 	if (!_scales) {
 		_box->hideColumn(1);
-		_box->setColumnWidthMode( 1, QListView::Manual );
+		_box->setColumnWidthMode( 1, Q3ListView::Manual );
 	}
 	_box->addColumn("Order");
 	_box->setSorting( 2, true );
-	_box->setColumnWidthMode( 2, QListView::Manual );
+	_box->setColumnWidthMode( 2, Q3ListView::Manual );
 	_box->hideColumn(2);
 	_layout->addWidget(_box);
 
 	// Create buttons
-	_buttonLay = new QVBoxLayout(0,5,-1,"_buttonLay");
+	_buttonLay = new Q3VBoxLayout(0,5,-1,"_buttonLay");
 	_addBtn = new QPushButton(this,"_addBtn");
 	_buttonLay->addWidget(_addBtn);
 	_deleteBtn = new QPushButton(this,"_deleteBtn");
@@ -125,8 +130,8 @@ fileListBox::fileListBox( QWidget* parent,
 		 this, SLOT( moveUp() ) );
 	connect( _downBtn, SIGNAL( clicked() ),
 		 this, SLOT( moveDown() ) );
-	connect( _box, SIGNAL(doubleClicked( QListViewItem*, const QPoint&, int)),
-		 this, SLOT( changeScale( QListViewItem*, const QPoint&, int ) ));
+	connect( _box, SIGNAL(doubleClicked( Q3ListViewItem*, const QPoint&, int)),
+		 this, SLOT( changeScale( Q3ListViewItem*, const QPoint&, int ) ));
 
 
 	return;
@@ -160,7 +165,7 @@ void fileListBox::setList(const QStringList& l)
 QStringList fileListBox::getList(void)
 {
 	QStringList s;
-	QListViewItemIterator i( _box );
+	Q3ListViewItemIterator i( _box );
 	while( i.current() ) {
 		s.push_back( reinterpret_cast<fileListItem*>(*i)->fullName() );
 		++i;
@@ -171,7 +176,7 @@ QStringList fileListBox::getList(void)
 QStringList fileListBox::getScales(void)
 {
 	QStringList s;
-	QListViewItemIterator i( _box );
+	Q3ListViewItemIterator i( _box );
 	while( i.current() ) {
 		s.push_back( (*i)->text( 1 ) );
 		++i;
@@ -190,7 +195,7 @@ void fileListBox::languageChange(void)
 
 void fileListBox::openFile(void)
 {
-	QString fn = QFileDialog::getOpenFileName();
+	QString fn = Q3FileDialog::getOpenFileName();
 	if( !fn.isEmpty() ) {
 		emit added();
 		(void) new fileListItem( _box,
@@ -218,8 +223,8 @@ void fileListBox::clear(void)
 
 void fileListBox::moveUp(void)
 {
-	QListViewItem* cur = _box->currentItem();
-	QListViewItem* prev = cur->itemAbove();
+	Q3ListViewItem* cur = _box->currentItem();
+	Q3ListViewItem* prev = cur->itemAbove();
 	if( cur && prev) {
 // 		emit movingUp(cur);
 		QString tmp = prev->text(2);
@@ -232,8 +237,8 @@ void fileListBox::moveUp(void)
 
 void fileListBox::moveDown(void)
 {
-	QListViewItem* cur = _box->currentItem();
-	QListViewItem* next = cur->itemBelow();
+	Q3ListViewItem* cur = _box->currentItem();
+	Q3ListViewItem* next = cur->itemBelow();
 	if( cur && next) {
 // 		emit movingDown(cur);
 		QString tmp = next->text(2);
@@ -268,7 +273,7 @@ static double getDouble( QWidget* parent,
 	dlg.setCaption( title );
 
 	// Build it with a vertical layout
-	QVBoxLayout* vbl = new QVBoxLayout( &dlg );
+	Q3VBoxLayout* vbl = new Q3VBoxLayout( &dlg );
 
 	QLabel* lbl = new QLabel( &dlg );
 	lbl->setText( label );
@@ -279,7 +284,7 @@ static double getDouble( QWidget* parent,
 	led->setText( QString::number( value, 'f', decimals ) );
 	vbl->addWidget( led );
 
-	QHBoxLayout* hbl = new QHBoxLayout;
+	Q3HBoxLayout* hbl = new Q3HBoxLayout;
 	vbl->addLayout( hbl );
 
 	hbl->addStretch();
@@ -302,7 +307,7 @@ static double getDouble( QWidget* parent,
 	return led->text().toDouble();
 }
 
-void fileListBox::changeScale( QListViewItem* i, const QPoint&, int )
+void fileListBox::changeScale( Q3ListViewItem* i, const QPoint&, int )
 {
 	if( !_scales ) return;
 	if( 0 == i ) return;
@@ -328,7 +333,7 @@ void fileListBox::changeScale( QListViewItem* i, const QPoint&, int )
 
 const QString& fileListBox::set_pwd( const QString& pwd )
 {
-	QListViewItemIterator i( _box );
+	Q3ListViewItemIterator i( _box );
 	while( i.current() ) {
 		reinterpret_cast<fileListItem*>(*i)->set_pwd( pwd );
 		++i;
@@ -338,10 +343,10 @@ const QString& fileListBox::set_pwd( const QString& pwd )
 
 // fileListItem definition
 
-fileListItem::fileListItem( QListView* parent,
+fileListItem::fileListItem( Q3ListView* parent,
 			    const QString& fn,
 			    double scale ) :
-	QListViewItem( parent,
+	Q3ListViewItem( parent,
 		       QString(),
 		       QString::number( scale, 'f', 3 ),
 		       QString::number( parent->childCount() )),
@@ -350,10 +355,10 @@ fileListItem::fileListItem( QListView* parent,
 	setText( 0, filenameAbbrev() );
 }
 
-fileListItem::fileListItem( QListView* parent,
+fileListItem::fileListItem( Q3ListView* parent,
 			    const QString& fn,
 			    const QString& scale ) :
-	QListViewItem( parent,
+	Q3ListViewItem( parent,
 		       QString(),
 		       QString::number( scale.toDouble(), 'f', 3 ),
 		       QString::number( parent->childCount() )),

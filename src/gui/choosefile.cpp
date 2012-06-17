@@ -30,27 +30,34 @@
  *
  */
 
+#define QT3_SUPPORT
+
 #include <qdialog.h>
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qwidget.h>
 #include <qstringlist.h>
-#include <qlistbox.h>
+#include <q3listbox.h>
 #include <qcheckbox.h>
 #include <qlabel.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <Q3VBoxLayout>
 #include "filelistbox.h"
 #include "choosefile.h"
 
 #include <iostream>
 #include <string>
 #include <cassert>
+
+
 using namespace std;
 
 chooseFile::chooseFile( const QStringList& cmdln,
 			QWidget* parent,
 			const char* name,
 			bool modal,
-			WFlags fl) :
+			Qt::WFlags fl) :
 	QDialog(parent,name,modal,fl)
 {
 
@@ -77,7 +84,7 @@ chooseFile::chooseFile( const QStringList& cmdln,
 	 */
 
 	// Set up the layouts
-	_vLay = new QVBoxLayout(this,10,-1,"_vLay");
+	_vLay = new Q3VBoxLayout(this,10,-1,"_vLay");
 	_budgetLabel = new QLabel(this);
 	_vLay->addWidget(_budgetLabel);
 	_budgets = new fileListBox(this, "Budget Files:", true);
@@ -88,7 +95,7 @@ chooseFile::chooseFile( const QStringList& cmdln,
 	_vLay->addWidget(_reports);
 
 	// Set up bottom buttons
-	_hLay = new QHBoxLayout(0,5,-1,"_hLay");
+	_hLay = new Q3HBoxLayout(0,5,-1,"_hLay");
 	_quiet = new QCheckBox(this,"_quiet");
 	_hLay->addWidget(_quiet);
 	_spacer = new QSpacerItem(0,0,QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -165,7 +172,7 @@ QStringList chooseFile::get_lb_cmds( const QStringList& cmdln,
 				     QWidget* parent,
 				     const char* name,
 				     bool modal,
-				     WFlags fl )
+				     Qt::WFlags fl )
 {
 	chooseFile dlg(cmdln,parent,name,modal,fl);
 

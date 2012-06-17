@@ -1,0 +1,107 @@
+Log for qt3to4 on Mon May 28 11:35:15 2012. Number of log entries: 59
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.cpp at line 34 column 18: qlistbox.h -> q3listbox.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.cpp at line 49 column 9: WFlags -> Qt::WFlags
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.cpp at line 59 column 24: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.cpp at line 70 column 24: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.cpp at line 144 column 15: WFlags -> Qt::WFlags
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.cpp: Added the following include directives:
+	#include <Q3HBoxLayout> 	#include <Q3VBoxLayout> 
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 34 column 21: qfiledialog.h -> q3filedialog.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 37 column 18: qlistbox.h -> q3listbox.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 38 column 19: qlistview.h -> q3listview.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 60 column 26: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 63 column 21: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 72 column 40: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 76 column 39: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 81 column 29: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 105 column 51: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 106 column 41: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 140 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 151 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 170 column 25: QFileDialog -> Q3FileDialog
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 198 column 14: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 199 column 14: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 212 column 14: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 213 column 14: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 238 column 12: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 238 column 35: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 249 column 12: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 249 column 35: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 272 column 44: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 298 column 22: QListViewItemIterator -> Q3ListViewItemIterator
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 308 column 37: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 311 column 14: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 320 column 37: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp at line 323 column 14: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.cpp: Added the following include directives:
+	#include <Q3HBoxLayout> 	#include <Q3VBoxLayout> 
+No changes made to file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/main.cpp
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 37 column 21: qfiledialog.h -> q3filedialog.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 44 column 20: qpopupmenu.h -> q3popupmenu.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 46 column 22: qtextbrowser.h -> q3textbrowser.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 47 column 18: qtoolbar.h -> q3toolbar.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 50 column 20: qwhatsthis.h -> q3whatsthis.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 163 column 9: WFlags -> Qt::WFlags
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 164 column 17: QMainWindow -> Q3MainWindow
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 179 column 41: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 181 column 31: QTextBrowser -> Q3TextBrowser
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 186 column 36: QIconSet -> QIcon
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 188 column 37: QIconSet -> QIcon
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 190 column 37: QIconSet -> QIcon
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 194 column 37: QIconSet -> QIcon
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 202 column 23: QToolBar -> Q3ToolBar
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 202 column 51: DockTop -> Qt::DockTop
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 216 column 26: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 224 column 26: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 232 column 26: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 258 column 35: QTextEdit -> Q3TextEdit
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 369 column 25: QFileDialog -> Q3FileDialog
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 389 column 26: IO_WriteOnly -> QIODevice::WriteOnly
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 390 column 13: QTextStream -> Q3TextStream
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp at line 410 column 12: QMainWindow -> Q3MainWindow
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.cpp: Added the following include directives:
+	#include <Q3TextStream> 	#include <Q3VBoxLayout> 
+
+Log for qt3to4 on Mon May 28 11:35:19 2012. Number of log entries: 38
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 36 column 17: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 37 column 17: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 38 column 17: QGridLayout -> Q3GridLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 41 column 14: QListBox -> Q3ListBox
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 42 column 18: QListBoxItem -> Q3ListBoxItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 57 column 12: WFlags -> Qt::WFlags
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 64 column 11: WFlags -> Qt::WFlags
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 85 column 12: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h at line 86 column 12: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/choosefile.h: Added the following include directives:
+	#include <Q3VBoxLayout> 	#include <Q3GridLayout> 	#include <Q3HBoxLayout> 	#include <QLabel> 
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 33 column 19: qlistview.h -> q3listview.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 39 column 17: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 40 column 17: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 43 column 41: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 49 column 24: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 52 column 24: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 103 column 32: QListViewItem -> Q3ListViewItem
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 115 column 10: QListView -> Q3ListView
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 122 column 12: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h at line 123 column 12: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/filelistbox.h: Added the following include directives:
+	#include <Q3HBoxLayout> 	#include <Q3VBoxLayout> 	#include <QLabel> 
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 36 column 21: qmainwindow.h -> q3mainwindow.h
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 38 column 17: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 39 column 17: QHBoxLayout -> Q3HBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 40 column 17: QGridLayout -> Q3GridLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 43 column 18: QActionGroup -> Q3ActionGroup
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 44 column 14: QToolBar -> Q3ToolBar
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 45 column 16: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 46 column 18: QTextBrowser -> Q3TextBrowser
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 49 column 37: QMainWindow -> Q3MainWindow
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 58 column 12: WFlags -> Qt::WFlags
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 91 column 13: QTextBrowser -> Q3TextBrowser
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 93 column 11: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 94 column 11: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 95 column 11: QPopupMenu -> Q3PopupMenu
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 96 column 9: QToolBar -> Q3ToolBar
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h at line 108 column 12: QVBoxLayout -> Q3VBoxLayout
+In file /mnt/homeDir/scott/Workbench/LitteBudget/src/gui/mainwindow.h: Added the following include directives:
+	#include <Q3ActionGroup> 	#include <Q3GridLayout> 	#include <Q3HBoxLayout> 	#include <Q3VBoxLayout> 	#include <Q3PopupMenu> 
+

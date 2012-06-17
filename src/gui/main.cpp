@@ -29,6 +29,9 @@
  * to get an idea of how the program executes.
  *
  */
+
+#define QT3_SUPPORT
+
 #include <qapplication.h>
 #include "mainwindow.h"
 
