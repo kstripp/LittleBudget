@@ -1,0 +1,3 @@
+/* Configuraion and settings for Little Budget Tool */
+
+#cmakedefine VERSION @VERSION_MAJOR@.@VERSION_MINOR@
